@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects · Shanshan Qiu</title>
+  <meta name="description" content="Projects by Shanshan Qiu — XJTLU university student.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== Header / navigation ===== -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">SQ</span>
+        Shanshan Qiu
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Main ===== -->
+  <main>
+    <section class="todo-section section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Productivity</span>
+          <h1>My To-Do List</h1>
+          <p>Pick a date on the calendar, type your task, and press Add. Tick the circle when it's done, or tap the X to remove it.</p>
+        </div>
+
+        <div class="todo-app reveal">
+          <!-- Task counter -->
+          <div class="todo-counter">
+            <span class="todo-counter-text" id="todoCounter">0 of 0 tasks completed</span>
+            <div class="todo-progress"><div class="todo-progress-bar" id="todoProgressBar"></div></div>
+          </div>
+
+          <!-- Calendar -->
+          <div class="todo-calendar">
+            <div class="cal-head">
+              <button type="button" class="cal-nav" id="prevMonth" aria-label="Previous month">&lsaquo;</button>
+              <span class="cal-title" id="calTitle">September 2026</span>
+              <button type="button" class="cal-nav" id="nextMonth" aria-label="Next month">&rsaquo;</button>
+            </div>
+            <div class="cal-weekdays">
+              <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            </div>
+            <div class="cal-grid" id="calGrid"></div>
+          </div>
+
+          <!-- Task panel -->
+          <div class="todo-panel">
+            <div class="todo-selected">
+              <small>Selected date</small>
+              <strong id="selectedDate">No date selected</strong>
+            </div>
+
+            <form class="todo-form" id="todoForm">
+              <input type="text" id="taskInput" placeholder="What do you need to do?" aria-label="Task description" autocomplete="off" required>
+              <select id="taskPriority" aria-label="Task priority">
+                <option value="Low">Low</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="High">High</option>
+              </select>
+              <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+
+            <ul class="todo-list" id="todoList"></ul>
+
+            <p class="todo-empty" id="todoEmpty">No tasks for this date yet. Add your first one above.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">SQ</span>
+        Shanshan Qiu
+      </a>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+      <p class="copyright">© <span id="year"></span> Shanshan Qiu · Made with warmth</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/main.js"></script>
+  <script src="js/todo.js"></script>
+</body>
+</html>
